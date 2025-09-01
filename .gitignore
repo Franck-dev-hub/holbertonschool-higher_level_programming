@@ -1,0 +1,10 @@
+# Ignore all
+*
+
+# Un-ignore
+!*.py
+!.gitignore
+!README.md
+
+# Specifically ignore files
+*main.py

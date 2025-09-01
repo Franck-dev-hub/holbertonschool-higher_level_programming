@@ -5,4 +5,4 @@ def uppercase(str):
         temp = ord(i)
         if 96 < temp < 124:
             temp -= 32
-        print(chr(temp), end="")
+        print("{:c}".format(temp), end="")

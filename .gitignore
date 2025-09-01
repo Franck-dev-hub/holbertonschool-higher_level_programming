@@ -9,3 +9,5 @@
 
 # Specifically ignore files
 *main.py
+/python-import_modules/add_0.py
+/python-import_modules/calculator.py

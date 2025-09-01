@@ -6,8 +6,9 @@ from add_0 import add
 def main():
     a = 1
     b = 2
-
-    print(f"{a} + {b} = {add(a, b)}")
+    
+    sum = add(a, b)
+    print("{} + {} = {}".format(a, b, sum))
 
 
 if __name__ == "__main__":

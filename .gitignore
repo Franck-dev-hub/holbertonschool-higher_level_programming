@@ -2,6 +2,7 @@
 *
 
 # Un-ignore
+!*/
 !*.py
 !.gitignore
 !README.md

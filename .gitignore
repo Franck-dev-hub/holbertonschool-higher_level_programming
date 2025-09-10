@@ -6,6 +6,7 @@
 !*.py
 !.gitignore
 !README.md
+!/python-test_driven_development/tests/*
 
 # Specifically ignore files
 *main.py

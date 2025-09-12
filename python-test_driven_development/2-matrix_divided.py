@@ -9,7 +9,11 @@ Return a matrix
 
 def matrix_divided(matrix, div):
     """
-    Main divide function
+    matrix_divided - Divide all elements of a matrix
+    @matrix: Input matrix
+    @div: Common divisor
+
+    Return: A matrix
     """
     errors(matrix, div)
 
@@ -22,20 +26,20 @@ def matrix_divided(matrix, div):
 
 def errors(matrix, div):
     """
-    Error management function
+    errors - Manage all errors
+    @matrix: Input matrix
+    @div: Common divisor
+
+    Return: Void
     """
-    if not isinstance(div, (int, float)):
-        raise TypeError("div must be a number")
-    elif div == 0:
-        raise ZeroDivisionError("division by zero")
+    if not isinstance(matrix, list) or len(matrix) == 0:
+        raise TypeError(
+                "matrix must be a matrix"
+                " (list of lists) of integers/floats"
+                )
 
     last_row = matrix[0]
     for row in matrix:
-        if not isinstance(row, list):
-            raise TypeError(
-                    "matrix must be a matrix"
-                    " (list of lists) of integers/floats"
-                    )
         if len(row) != len(last_row):
             raise TypeError("Each row of the matrix must have the same size")
         for num in row:
@@ -43,3 +47,15 @@ def errors(matrix, div):
                 raise TypeError(
                         "matrix must be a matrix"
                         " (list of lists) of integers/floats")
+
+    if not isinstance(row, list):
+        raise TypeError(
+                "matrix must be a matrix"
+                " (list of lists) of integers/floats"
+                )
+
+    if not isinstance(div, (int, float)):
+        raise TypeError("div must be a number")
+
+    if div == 0:
+        raise ZeroDivisionError("division by zero")

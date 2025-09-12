@@ -1,0 +1,38 @@
+Function import
+---------------
+>>> print_square = __import__('4-print_square').print_square
+
+Simple test
+-----------
+.. code-block:: python
+	>>> print_square(2)
+	##
+	##
+
+Error - wrong input type
+------------------------
+.. code-block:: python
+	>>> print_square("toto")
+	Traceback (most recent call last):
+	...
+	TypeError: size must be an integer
+
+.. code-block:: python
+	>>> print_square(["toto"])
+	Traceback (most recent call last):
+	...
+	TypeError: size must be an integer
+
+Error - args count
+------------------
+.. code-block:: python
+	>>> print_square()
+	Traceback (most recent call last):
+	...
+	TypeError: print_square() missing 1 required positional argument: 'size'
+
+.. code-block:: python
+	>>> print_square(2, 3)
+	Traceback (most recent call last):
+	...
+	TypeError: print_square() takes 1 positional argument but 2 were given

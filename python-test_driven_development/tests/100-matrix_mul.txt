@@ -1,0 +1,57 @@
+Function import
+---------------
+>>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+
+Test - integers
+---------------
+.. code-block:: python
+	>>> print(matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]]))
+	[[7, 10], 15, 22]
+
+	>>> print(matrix_mul([[1, 2]], [[3, 4], [5, 6]]))
+	[[13, 16]]
+
+Test - negative
+---------------
+.. code-block:: python
+	>>> print(matrix_mul([[-1, -2], [-3, -4]], [[-1, -2], [-3, -4]]))
+	[[7, 10], [15, 22]]
+
+	>>> print(matrix_mul([[-1, -2]], [[-3, -4], [-5, -6]]))
+	[[13, 16]]
+
+Test - float
+------------
+.. code-block:: python
+	>>> print(matrix_mul([[1.2, 2.4], [3.6, 4.8]], [[1.2, 2.4], [3.6, 4.8]]))
+	[[10.08, 14.399999999999999], [21.6, 31.68]]
+
+	>>> print(matrix_mul([[1.2, 2.4]], [[3.6, 4.8], [5.1, 6.2]]))
+	[[16.56, 20.64]]
+
+Error - types
+-------------
+.. code-block:: python
+	>>> print(matrix_mul([[1, "toto"]], [[3, 4], [5, 6]]))
+	Traceback (most recent call last):
+	...
+	TypeError: m_a should contain only integers or floats
+
+	>>> print(matrix_mul([[1, 2]], [[3, 4], [5, "toto"]]))
+	Traceback (most recent call last):
+	...
+	TypeError: m_b should contain only integers or floats
+
+
+Error - args number
+-------------------
+.. code-block:: python
+	>>> print(matrix_mul())
+	Traceback (most recent call last):
+	...
+	TypeError: matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
+
+	>>> print(matrix_mul([[1, 2], [3, 4]], [[5, 6], [7, 8]], [[9, 10], [11, 12]]))
+	Traceback (most recent call last):
+	...
+	TypeError: matrix_mul() takes 2 positional arguments but 3 were given

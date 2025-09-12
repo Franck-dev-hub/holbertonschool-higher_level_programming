@@ -1,0 +1,129 @@
+Function import
+---------------
+>>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
+
+Test - integers
+---------------
+.. code-block:: python
+	>>> print(lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]]))
+	[[ 7 10]
+	 [15 22]]
+
+	>>> print(lazy_matrix_mul([[1, 2]], [[3, 4], [5, 6]]))
+	[[13 16]]
+
+Test - negative
+---------------
+.. code-block:: python
+	>>> print(lazy_matrix_mul([[-1, -2], [-3, -4]], [[-1, -2], [-3, -4]]))
+	[[ 7 10]
+	 [15 22]]
+
+	>>> print(lazy_matrix_mul([[-1, -2]], [[-3, -4], [-5, -6]]))
+	[[13 16]]
+
+Test - float
+------------
+.. code-block:: python
+	>>> print(lazy_matrix_mul([[1.2, 2.4], [3.6, 4.8]], [[1.2, 2.4], [3.6, 4.8]]))
+	[[10.08 14.4 ]
+	 [21.6  31.68]]
+
+	>>> print(lazy_matrix_mul([[1.2, 2.4]], [[3.6, 4.8], [5.1, 6.2]]))
+	[[16.56 20.64]]
+
+Error - types
+-------------
+.. code-block:: python
+	>>> print(lazy_matrix_mul([[1, "toto"]], [[3, 4], [5, 6]]))
+	Traceback (most recent call last):
+	...
+	TypeError: m_a should contain only integers or floats
+
+	>>> print(lazy_matrix_mul([[1, 2]], [[3, 4], [5, "toto"]]))
+	Traceback (most recent call last):
+	...
+	TypeError: m_b should contain only integers or floats
+
+Error - args number
+-------------------
+.. code-block:: python
+	>>> print(lazy_matrix_mul())
+	Traceback (most recent call last):
+	...
+	TypeError: lazy_matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
+
+	>>> print(lazy_matrix_mul([[1, 2], [3, 4]], [[5, 6], [7, 8]], [[9, 10], [11, 12]]))
+	Traceback (most recent call last):
+	...
+	TypeError: lazy_matrix_mul() takes 2 positional arguments but 3 were given
+
+Error - not a list
+------------------
+.. code-block:: python
+	>>> print(lazy_matrix_mul("not a list", [[1, 2]]))
+	Traceback (most recent call last):
+	...
+	TypeError: m_a must be a list
+
+	>>> print(lazy_matrix_mul([[1, 2]], "not a list"))
+	Traceback (most recent call last):
+	...
+	TypeError: m_b must be a list
+
+Error - not a list of lists
+----------------------------
+.. code-block:: python
+	>>> print(lazy_matrix_mul([1, 2, 3], [[1, 2]]))
+	Traceback (most recent call last):
+	...
+	TypeError: m_a must be a list of lists
+
+	>>> print(lazy_matrix_mul([[1, 2]], [1, 2, 3]))
+	Traceback (most recent call last):
+	...
+	TypeError: m_b must be a list of lists
+
+Error - empty
+-------------
+.. code-block:: python
+	>>> print(lazy_matrix_mul([], [[1, 2]]))
+	Traceback (most recent call last):
+	...
+	ValueError: m_a can't be empty
+
+	>>> print(lazy_matrix_mul([[]], [[1, 2]]))
+	Traceback (most recent call last):
+	...
+	ValueError: m_a can't be empty
+
+	>>> print(lazy_matrix_mul([[1, 2]], []))
+	Traceback (most recent call last):
+	...
+	ValueError: m_b can't be empty
+
+	>>> print(lazy_matrix_mul([[1, 2]], [[]]))
+	Traceback (most recent call last):
+	...
+	ValueError: m_b can't be empty
+
+Error - not rectangular
+----------------------
+.. code-block:: python
+	>>> print(lazy_matrix_mul([[1, 2], [3]], [[1, 2], [3, 4]]))
+	Traceback (most recent call last):
+	...
+	TypeError: each row of m_a must be of the same size
+
+	>>> print(lazy_matrix_mul([[1, 2]], [[1, 2], [3]]))
+	Traceback (most recent call last):
+	...
+	TypeError: each row of m_b must be of the same size
+
+Error - incompatible dimensions
+-------------------------------
+.. code-block:: python
+	>>> print(lazy_matrix_mul([[1, 2, 3]], [[1, 2], [3, 4]]))
+	Traceback (most recent call last):
+	...
+	ValueError: m_a and m_b can't be multiplied

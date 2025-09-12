@@ -9,6 +9,14 @@ Simple test
 	##
 	##
 
+Error - negative number
+-----------------------
+.. code-block:: python
+	>>> print_square(-1)
+	Traceback (most recent call last):
+	...
+	ValueError: size must be >= 0
+
 Error - wrong input type
 ------------------------
 .. code-block:: python

@@ -1,0 +1,67 @@
+ Function import
+---------------
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Test - simple
+-----------
+.. code-block:: python
+	>>> text_indentation("Let's eat kids")
+	Let's eat kids
+
+	>>> text_indentation("Let's eat. Kids")
+	Let's eat.
+	<BLANKLINE>
+	Kids
+
+	>>> text_indentation("Let's eat, kids")
+	Let's eat,
+	<BLANKLINE>
+	kids
+
+	>>> text_indentation("Let's eat? Kids")
+	Let's eat?
+	<BLANKLINE>
+	Kids
+
+	>>> text_indentation("Let's eat: kids")
+	Let's eat:
+	<BLANKLINE>
+	kids
+
+Test - empty
+------------
+.. code-block:: python
+	>>> text_indentation("")
+	
+
+	>>> text_indentation(None)
+	Traceback (most recent call last):
+        ...
+        TypeError: text must be a string
+
+Error - types
+-------------
+.. code-block:: python
+	>>> text_indentation(2)
+	Traceback (most recent call last):
+        ...
+        TypeError: text must be a string
+
+	>>> text_indentation(["Kids"])
+        Traceback (most recent call last):
+        ...
+        TypeError: text must be a string
+
+Error - args number
+-------------------
+.. code-block:: python
+
+	>>> text_indentation()
+	Traceback (most recent call last):
+	...
+	TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+	>>> text_indentation("Let's eat", "kids")
+	Traceback (most recent call last):
+	...
+	TypeError: text_indentation() takes 1 positional argument but 2 were given

@@ -1,25 +1,55 @@
-# ----- Function import -----
+Function import
+---------------
 >>> say_my_name = __import__('3-say_my_name').say_my_name
 
-# ----- Simple test -----
->>> say_my_name("John", "Smith")
-My name is John Smith
+Simple test
+-----------
+.. code-block:: python
+	>>> say_my_name("Picka", "chu")
+	My name is Picka chu
 
->>> say_my_name("Bob")
-My name is Bob 
+.. code-block:: python
+	>>> say_my_name("Bob")
+	My name is Bob 
 
-# ----- Errors -----
->>> say_my_name(12, "White")
-Traceback (most recent call last):
-...
-TypeError: first_name must be a string
+Error - first name
+------------------
+.. code-block:: python
+	>>> say_my_name(1, "Doe")
+	Traceback (most recent call last):
+	...
+	TypeError: first_name must be a string
 
->>> say_my_name("White", 12)
-Traceback (most recent call last):
-...
-TypeError: last_name must be a string
+.. code-block:: python
+	>>> say_my_name(["John"], "Doe")
+	Traceback (most recent call last):
+	...
+	TypeError: first_name must be a string
 
->>> say_my_name(12)
-Traceback (most recent call last):
-...
-TypeError: first_name must be a string
+Error - last name
+-----------------
+.. code-block:: python
+	>>> say_my_name("Mc", 1)
+	Traceback (most recent call last):
+	...
+	TypeError: last_name must be a string
+
+.. code-block:: python
+	>>> say_my_name("Mc", ["Doe"])
+	Traceback (most recent call last):
+	...
+	TypeError: last_name must be a string
+
+Error - args count
+------------------
+.. code-block:: python
+	>>> say_my_name()
+	Traceback (most recent call last):
+	...
+	TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+.. code-block:: python
+	>>> say_my_name("Bob", "Dy", "lan")
+	Traceback (most recent call last):
+	...
+	TypeError: say_my_name() takes from 1 to 2 positional arguments but 3 were given

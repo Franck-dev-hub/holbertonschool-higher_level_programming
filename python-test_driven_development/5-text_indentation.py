@@ -2,7 +2,7 @@
 
 """
 5-text_indentation.py
-This module prints a text with 2 new lines after each of these characters: ., ? and :
+This module prints a text with 2 new lines after: ., ?:
 Return: Void
 """
 

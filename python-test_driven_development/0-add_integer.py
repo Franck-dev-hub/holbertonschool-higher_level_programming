@@ -2,15 +2,18 @@
 
 """
 0-add_integer.py
-This module add two integers or floats
+This module add two integers or floats together
 Return int
 """
 
 
 def add_integer(a, b=98):
     """
-    This function add two integers or floats
-    Floats are casted to integers before addition
+    add_integer - Add two integer together
+    @a: Number 1
+    @b: Number 2
+
+    Return: int
     """
     if not isinstance(a, (int, float)):
         raise TypeError("a must be an integer")

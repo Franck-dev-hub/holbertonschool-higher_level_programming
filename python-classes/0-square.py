@@ -6,6 +6,7 @@ This module create a square
 Return: Void
 """
 
+
 class Square:
     """
     Define a square

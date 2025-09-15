@@ -15,6 +15,7 @@ class Square:
         """
         __init__ - Init new square
         @size: Size of the square
+        @position: Square position
         Return: Void
         """
         if not isinstance(size, int):

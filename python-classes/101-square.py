@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """
-6-square.py
+101-square.py
 This module create a square
 Return: Void
 """

@@ -37,7 +37,7 @@ class Square:
     def __str__(self):
         """
         __str__ - Convert to str
-        Return: Void
+        Return: str - result
         """
         if self.__size == 0:
             return ""

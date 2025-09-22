@@ -1,0 +1,63 @@
+Function import
+---------------
+>>> MyList = __import__('1-my_list').MyList
+
+Positive integers
+-----------------
+.. code-block:: python
+	>>> my_list = MyList()
+	>>> my_list.append(10)
+	>>> my_list.append(1)
+	>>> my_list.append(0)
+	>>> my_list.append(5)
+	>>> print(my_list.print_sorted())
+	[0, 1, 5, 10]
+	None
+
+	>>> my_list = MyList()
+	>>> my_list.append(1)
+	>>> my_list.append(2)
+	>>> my_list.append(3)
+	>>> my_list.append(4)
+	>>> print(my_list.print_sorted())
+	[1, 2, 3, 4]
+	None
+
+	>>> my_list = MyList()
+	>>> my_list.append(4)
+	>>> my_list.append(3)
+	>>> my_list.append(2)
+	>>> my_list.append(1)
+	>>> print(my_list.print_sorted())
+	[1, 2, 3, 4]
+	None
+
+Negative integers
+-----------------
+.. code-block:: python
+	>>> my_list = MyList()
+	>>> my_list.append(-4)
+	>>> my_list.append(-3)
+	>>> my_list.append(-2)
+	>>> my_list.append(-1)
+	>>> print(my_list.print_sorted())
+	[-4, -3, -2, -1]
+	None
+
+	>>> my_list = MyList()
+	>>> my_list.append(-1)
+	>>> my_list.append(-2)
+	>>> my_list.append(-3)
+	>>> my_list.append(-4)
+	>>> print(my_list.print_sorted())
+	[-4, -3, -2, -1]
+	None
+
+	>>> my_list = MyList()
+	>>> my_list.append(-4)
+	>>> my_list.append(3)
+	>>> my_list.append(0)
+	>>> my_list.append(-1)
+	>>> print(my_list.print_sorted())
+	[-4, -1, 0, 3]
+	None

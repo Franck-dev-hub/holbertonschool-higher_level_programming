@@ -1,8 +1,9 @@
 Function import
 ---------------
 >>> MyList = __import__('1-my_list').MyList
+>>> print_sorted = MyList.print_sorted
 
-Positive integers
+Positive Integers
 -----------------
 .. code-block:: python
 	>>> my_list = MyList()
@@ -10,54 +11,49 @@ Positive integers
 	>>> my_list.append(1)
 	>>> my_list.append(0)
 	>>> my_list.append(5)
-	>>> print(my_list.print_sorted())
+
+	>>> print(my_list)
+	[10, 1, 0, 5]
+
+	>>> print_sorted(my_list)
 	[0, 1, 5, 10]
-	None
-
-	>>> my_list = MyList()
-	>>> my_list.append(1)
-	>>> my_list.append(2)
-	>>> my_list.append(3)
-	>>> my_list.append(4)
-	>>> print(my_list.print_sorted())
-	[1, 2, 3, 4]
-	None
-
-	>>> my_list = MyList()
-	>>> my_list.append(4)
-	>>> my_list.append(3)
-	>>> my_list.append(2)
-	>>> my_list.append(1)
-	>>> print(my_list.print_sorted())
-	[1, 2, 3, 4]
-	None
 
 Negative integers
 -----------------
 .. code-block:: python
 	>>> my_list = MyList()
 	>>> my_list.append(-4)
-	>>> my_list.append(-3)
-	>>> my_list.append(-2)
-	>>> my_list.append(-1)
-	>>> print(my_list.print_sorted())
-	[-4, -3, -2, -1]
-	None
-
-	>>> my_list = MyList()
-	>>> my_list.append(-1)
-	>>> my_list.append(-2)
-	>>> my_list.append(-3)
-	>>> my_list.append(-4)
-	>>> print(my_list.print_sorted())
-	[-4, -3, -2, -1]
-	None
-
-	>>> my_list = MyList()
-	>>> my_list.append(-4)
 	>>> my_list.append(3)
 	>>> my_list.append(0)
 	>>> my_list.append(-1)
-	>>> print(my_list.print_sorted())
+
+	>>> print(my_list)
+	[-4, 3, 0, -1]
+
+	>>> print_sorted(my_list)
 	[-4, -1, 0, 3]
-	None
+
+Strings
+-------
+.. code-block:: python
+	>>> my_list = MyList()
+	>>> my_list.append("This")
+	>>> my_list.append("is")
+	>>> my_list.append("a")
+	>>> my_list.append("test")
+
+	>>> print(my_list)
+	['This', 'is', 'a', 'test']
+
+	>>> print_sorted(my_list)
+	['This', 'a', 'is', 'test']
+
+Empty list
+----------
+.. code-block:: python
+	>>> my_list = MyList()
+	>>> print(my_list)
+	[]
+
+	>>> print_sorted(my_list)
+	[]

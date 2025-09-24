@@ -41,7 +41,7 @@ class Circle(Shape):
         @radius: Radius
         Return: Void
         """
-        self.__radius = radius
+        self.__radius = abs(radius)
 
     def area(self):
         """

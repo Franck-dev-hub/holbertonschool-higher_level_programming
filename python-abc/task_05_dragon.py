@@ -27,7 +27,7 @@ class FlyMixin():
         fly - Fly function
         Return: Void
         """
-        prin("The creature flies!")
+        print("The creature flies!")
 
 
 class Dragon(SwimMixin, FlyMixin):

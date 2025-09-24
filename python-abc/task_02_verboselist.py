@@ -45,5 +45,5 @@ class VerboseList(list):
         Return: Index
         """
         index = super().pop(index)
-        priunt("Popped [{}] from the list.".format(index))
+        print("Popped [{}] from the list.".format(index))
         return index

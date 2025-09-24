@@ -55,7 +55,7 @@ class Circle(Shape):
         perimeter - Perimeter function
         Return: Circle perimeter
         """
-        return (2 * pr * self.__radius)
+        return (2 * pi * self.__radius)
 
 
 class Rectangle(Shape):
@@ -84,7 +84,7 @@ class Rectangle(Shape):
         perimeter - Perimeter function
         Return: Rectangle perimeter
         """
-        return ((self.__width + self.height) * 2)
+        return ((self.__width + self.__height) * 2)
 
 
 def shape_info(obj):
@@ -94,6 +94,6 @@ def shape_info(obj):
     Return: Void
     """
     area = obj.area()
-    perimeter = obj.permiter()
+    perimeter = obj.perimeter()
     print("Area: {}".format(area))
     print("Perimeter: {}".format(perimeter))

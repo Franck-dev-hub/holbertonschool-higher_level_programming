@@ -69,4 +69,4 @@ class FlyingFish(Fish, Bird):
         habitat - Habitat function
         Return: Void
         """
-        print("The flying fish lives in water and the sky!")
+        print("The flying fish lives both in water and the sky!")

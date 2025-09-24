@@ -6,9 +6,9 @@ Extend built-in iterator
 """
 
 
-class CountedIterator:
+class CountedIterator():
     """
-    CountedIterator - CountedIterator class
+    CountedIterator - Counted iterator class
     """
     def __init__(self, data):
         """

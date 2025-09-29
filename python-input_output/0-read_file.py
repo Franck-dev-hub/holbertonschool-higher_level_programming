@@ -5,6 +5,7 @@
 Read a txt file
 """
 
+
 def read_file(filename=""):
     """
     read_file - Read a txt file

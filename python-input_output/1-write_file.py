@@ -5,6 +5,7 @@
 Write in a file
 """
 
+
 def write_file(filename="", text=""):
     """
     write_file - Write in a file

@@ -1,11 +1,12 @@
 #!/usr/bin/python3
 
-import json
-
 """
 4-from_json_string.py
 Return un object represented by a JSON string
 """
+
+import json
+
 
 def from_json_string(my_str):
     """

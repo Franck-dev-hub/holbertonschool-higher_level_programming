@@ -7,6 +7,7 @@ Read stdin
 
 import sys
 
+
 def print_stats(total_size, status_count):
     """
     print_stats - Print accumulated stats
@@ -17,6 +18,7 @@ def print_stats(total_size, status_count):
     print("File size: {}".format(total_size))
     for code in sorted(status_count.keys()):
         print("{}: {}".format(code, status_count[code]))
+
 
 def main():
     """
@@ -58,6 +60,7 @@ def main():
     except KeyboardInterrupt:
         print_stats(total_size, status_count)
         raise
+
 
 if __name__ == "__main__":
     main()

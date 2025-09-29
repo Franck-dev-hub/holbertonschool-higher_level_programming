@@ -5,6 +5,7 @@
 Insert a text after a specific text
 """
 
+
 def append_after(filename="", search_string="", new_string=""):
     """
     append_after - Append a text after an other
@@ -18,7 +19,7 @@ def append_after(filename="", search_string="", new_string=""):
 
     new_lines = []
     for line in content:
-        new_lines.append(line) 
+        new_lines.append(line)
         if search_string in line:
             new_lines.append(new_string)
 

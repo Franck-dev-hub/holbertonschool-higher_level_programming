@@ -13,4 +13,7 @@ def read_file(filename=""):
     Return: Void
     """
     with open(filename, "r", encoding="utf-8") as file:
-        print(file.read())
+        content = file.readline()
+        while content != "":
+            print(content, end="")
+            content = file.readline()

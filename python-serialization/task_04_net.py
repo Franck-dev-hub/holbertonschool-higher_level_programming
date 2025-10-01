@@ -30,7 +30,7 @@ def start_server(host="127.0.0.1", port=12345):
         with client_socket:
             print("Connected with {}".format(client_adress))
             # Receive data
-            data = client_socket.recv(1024) # 1024 = max octets
+            data = client_socket.recv(1024)  # 1024 = max octets
             if data:
                 try:
                     # Deserialize json to dictionary

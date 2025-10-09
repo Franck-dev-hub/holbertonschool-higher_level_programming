@@ -13,10 +13,10 @@ def fetch_and_print_posts():
     fetch_and_print_posts - Fetch and print posts
     Return: Void
     """
-    request = requests.get("https://jsonplaceholder.typicode.com/posts")
-    print(request.status_code)
-    if request.status_code == 200:
-        data = request.json()
+    req = requests.get("https://jsonplaceholder.typicode.com/posts")
+    print("Status Code: {}".format(req.status_code))
+    if req.status_code == 200:
+        data = req.json()
         for i in data:
             print(i["title"])
 
@@ -26,10 +26,10 @@ def fetch_and_save_posts():
     fetch_and_save_posts - Fetch and print posts
     Return: Void
     """
-    request = requests.get("https://jsonplaceholder.typicode.com/posts")
-    print(request.status_code)
-    if request.status_code == 200:
-        data = request.json()
+    req = requests.get("https://jsonplaceholder.typicode.com/posts")
+    print("Status Code: {}".format(req.status_code))
+    if req.status_code == 200:
+        data = req.json()
         result = []
         for i in range(len(data)):
             result.append({

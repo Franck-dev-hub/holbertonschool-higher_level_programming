@@ -26,7 +26,7 @@ def get_usernames():
     get_usernames - Get usernames
     Return: list of users
     """
-    return jsonify(list(users.keys()))
+    return (jsonify(list(users.keys())))
 
 
 @app.route("/users/<username>")
@@ -36,8 +36,8 @@ def get_user(username):
     Return: User data if user exist, else error 404
     """
     if username in users:
-        return jsonify(users[username])
-    return jsonify({"error": "User not found"}), 404
+        return (jsonify(users[username]))
+    return (jsonify({"error": "User not found"}), 404)
 
 
 @app.route("/add_user", methods=["POST"])
@@ -46,22 +46,26 @@ def add_user():
     add_user - Add user function
     Return: Message 201 if user added, else error 400
     """
-    content = request.get_json()
-    required_fields = {"username", "name", "age", "city"}
+    content = json.loads(request.data)
 
-    if not content or not required_fields.issubset(content.keys()):
-        return jsonify({"error": "Missing field"}), 400
-
-    user = {
+    if "username" in content.keys():
+        user = {
             "username": content["username"],
             "name": content["name"],
             "age": content["age"],
             "city": content["city"]
-            }
+        }
 
-    users[user["username"]] = user
-    return jsonify({"message": "User added", "user": user}), 201
+        users[user["username"]] = user
+        message = "User added"
+        return (jsonify({
+            "message": message,
+            "user": user
+        }), 201)
 
+    else:
+        message = {"error": "Username is required"}
+        return (jsonify(message), 400)
 
 @app.route("/status")
 def get_status():

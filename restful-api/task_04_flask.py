@@ -26,7 +26,8 @@ def get_usernames():
     get_usernames - Get usernames
     Return: list of users
     """
-    return (jsonify(list(users.keys())))
+    usernames = [username for username in users.keys()]
+    return (jsonify(usernames))
 
 
 @app.route("/users/<username>")
@@ -35,9 +36,12 @@ def get_user(username):
     get_user - Get user datas
     Return: User data if user exist, else error 404
     """
-    if username in users:
-        return (jsonify(users[username]))
-    return (jsonify({"error": "User not found"}), 404)
+    if username in users.keys():
+        user = users[username]
+        return (jsonify(user))
+    else:
+        error = {"error": "User not found"}
+        return (jsonify(error), 404)
 
 
 @app.route("/add_user", methods=["POST"])
@@ -66,6 +70,7 @@ def add_user():
     else:
         message = {"error": "Username is required"}
         return (jsonify(message), 400)
+
 
 @app.route("/status")
 def get_status():

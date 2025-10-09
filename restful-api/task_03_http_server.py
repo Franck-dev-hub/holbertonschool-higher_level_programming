@@ -43,7 +43,7 @@ class ServerHandler(BaseHTTPRequestHandler):
         else:
             self.send_response(404, message="Not found")
             self.send_header("Content-type", "text/plain")
-            self.end_header()
+            self.end_headers()
             message = "Endpoint not found"
 
         self.wfile.write(bytes(message, "utf8"))

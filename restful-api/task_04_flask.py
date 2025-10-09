@@ -50,26 +50,28 @@ def add_user():
     add_user - Add user function
     Return: Message 201 if user added, else error 400
     """
-    content = json.loads(request.data)
+    if request.method == "POST":
+        content = json.loads(request.data)
 
-    if "username" in content.keys():
-        user = {
-            "username": content["username"],
-            "name": content["name"],
-            "age": content["age"],
-            "city": content["city"]
-        }
+        if "username" in content.keys():
+            user = {
+                "username": content["username"],
+                "name": content["name"],
+                "age": content["age"],
+                "city": content["city"]
+            }
 
-        users[user["username"]] = user
-        message = "User added"
-        return (jsonify({
-            "message": message,
-            "user": user
-        }), 201)
+            users[user["username"]] = user
+            message = "User added"
 
-    else:
-        message = {"error": "Username is required"}
-        return (jsonify(message), 400)
+            return (jsonify({
+                "message": message,
+                "user": user
+            }), 201)
+
+        else:
+            message = {"error": "Username is required"}
+            return (jsonify(message), 400)
 
 
 @app.route("/status")

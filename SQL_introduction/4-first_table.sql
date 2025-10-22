@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS first_class (
+CREATE TABLE IF NOT EXISTS first_table (
 	id INT,
 	name VARCHAR(256)
 );

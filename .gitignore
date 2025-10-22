@@ -8,6 +8,7 @@
 !README.md
 !/python-test_driven_development/tests/*
 !/python-inheritance/tests/*
+!*.sql
 
 # Specifically ignore files
 *main*.py

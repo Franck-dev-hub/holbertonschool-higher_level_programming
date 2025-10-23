@@ -1,3 +1,4 @@
+-- Create a table with content
 CREATE TABLE IF NOT EXISTS second_table (
 	id INT,
 	name VARCHAR(256),

@@ -1,1 +1,3 @@
-SELECT * FROM first_table
+-- List all table values
+SELECT *
+FROM first_table

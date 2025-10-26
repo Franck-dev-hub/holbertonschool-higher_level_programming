@@ -12,10 +12,10 @@ def main():
     Return: Void
     """
     if len(sys.argv) != 5:
-        print("Usage: {} <username> <password> <database> <state name>".format(sys.argv[0]))
+        print("Usage: {} <user> <passwd> <db> <statename>".format(sys.argv[0]))
         sys.exit(1)
 
-    username, password, database state_name= sys.argv[1:5]
+    username, password, database, state_name = sys.argv[1:5]
     db = None
 
     try:
@@ -31,7 +31,7 @@ def main():
         with db.cursor() as cur:
             cur.execute("""
                         SELECT * FROM states
-                        WHERE name LIKE BINARY '{}'
+                        WHERE name = BINARY '{}'
                         ORDER BY id ASC
                         """
                         ).format(state_name)

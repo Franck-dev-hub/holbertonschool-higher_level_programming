@@ -13,9 +13,11 @@ def main():
     main  - Main function
     Return: Void
     """
-    username = sys.argv[1]
-    password = sys.argv[2]
-    database = sys.argv[3]
+    if len(sys.argv) != 4:
+        print("Usage: ./script.py <username> <password> <database>")
+        sys.exit(1)
+
+    username, password, database = sys.argv[1:4]
 
     engine = create_engine(
         "mysql+mysqldb://{}:{}@localhost/{}".format(

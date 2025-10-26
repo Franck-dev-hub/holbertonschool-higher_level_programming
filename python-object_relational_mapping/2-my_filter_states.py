@@ -29,12 +29,12 @@ def main():
                 )
 
         with db.cursor() as cur:
-            cur.execute("""
-                        SELECT * FROM states
-                        WHERE name = BINARY '{}'
-                        ORDER BY id ASC
-                        """
-                        ).format(state_name)
+            sql = """
+                SELECT * FROM states
+                WHERE name = BINARY %s
+                ORDER BY id ASC
+                """
+            cur.execute(sql, (state_name,))
 
             for row in cur.fetchall():
                 print(row)

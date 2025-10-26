@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """
 List all states with names starting with N
 """
@@ -29,9 +29,11 @@ def main():
                 )
 
         with db.cursor() as cur:
-            cur.execute("""SELECT * FROM states
+            cur.execute("""
+                        SELECT * FROM states
                         WHERE name LIKE BINARY 'N%'
-                        ORDER BY id ASC""")
+                        ORDER BY id ASC
+                        """)
 
             for row in cur.fetchall():
                 print(row)

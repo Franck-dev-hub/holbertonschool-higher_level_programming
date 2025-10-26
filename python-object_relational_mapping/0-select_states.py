@@ -32,8 +32,10 @@ def main():
         # Getting a Cursor in MySQL Python
         with db.cursor() as cur:
             # Executing MySQL Queries in Python
-            cur.execute("""SELECT * FROM states
-                        ORDER BY id ASC""")
+            cur.execute("""
+                        SELECT * FROM states
+                        ORDER BY id ASC
+                        """)
 
             # Obtaining Query Results
             for row in cur.fetchall():

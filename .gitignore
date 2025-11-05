@@ -13,9 +13,7 @@
 
 # Specifically ignore files
 *main*.py
+*main*.js
 /python-import_modules/add_0.py
 /python-import_modules/calculator_1.py
 /python-import_modules/variable_load_5.py
-
-# Specifically ignore folders
-/javascript-warm_up/node_modules/

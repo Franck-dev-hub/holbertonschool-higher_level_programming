@@ -8,7 +8,7 @@ if (argv.length > 2) {
     for (let i = 0; i < num; i++) {
       console.log('My number: ', num);
     }
-  } else {
-    console.log('Missing number of occurrences');
   }
+} else {
+  console.log('Missing number of occurrences');
 }

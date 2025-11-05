@@ -1,17 +1,17 @@
 #!/usr/bin/node
 
 const { argv } = require('node:process');
+const num = parseInt(argv[2]);
 
 if (argv.length > 2) {
-  const num = Number(argv[2]);
-  if (!isNaN(num)) {
+  if (isNaN(num)) {
+    console.log('Missing size');
+  } else {
     for (let i = 0; i < num; i++) {
       for (let j = 0; j < num; j++) {
-        process.stdout.write('#');
+        process.stdout.write('X');
       }
-      console.log('#');
+      console.log('X');
     }
-  } else {
-    console.log('Missing size');
   }
 }

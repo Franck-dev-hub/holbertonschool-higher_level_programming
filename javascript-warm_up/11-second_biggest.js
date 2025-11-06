@@ -12,6 +12,6 @@ function second (argv) {
 
 if (argv.length === 2 || argv.length === 3) {
   console.log(0);
-} else if (argv.length > 2) {
+} else {
   console.log(second(argv)[1]);
 }

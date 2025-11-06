@@ -2,16 +2,11 @@
 
 const { argv } = require('node:process');
 
-function second (argv) {
-  const nums = [];
-  for (let i = 2; i < argv.length; i++) {
-    nums.push(argv[i]);
-  }
-  return nums.sort().reverse();
-}
+const uni = [...new Set(argv)];
+uni.sort((a, b) => b - a);
 
 if (argv.length === 2 || argv.length === 3) {
   console.log(0);
 } else {
-  console.log(second(argv)[1]);
+  console.log(uni[3]);
 }

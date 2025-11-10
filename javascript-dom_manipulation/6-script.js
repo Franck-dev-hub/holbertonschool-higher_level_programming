@@ -4,4 +4,4 @@ fetch(url)
   .then(response => response.json())
   .then(data => {
     document.getElementById('character').textContent = data.name;
-  })
+  });

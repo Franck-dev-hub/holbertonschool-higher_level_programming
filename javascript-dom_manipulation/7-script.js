@@ -8,4 +8,4 @@ fetch(url)
       newItem.innerText = data.results[i].title;
       document.querySelector('ul').appendChild(newItem);
     }
-  })
+  });

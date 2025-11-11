@@ -9,6 +9,7 @@
 !README.md
 !/python-test_driven_development/tests/*
 !/python-inheritance/tests/*
+!/python-server_side_rendering/templates/*.html
 !*.sql
 
 # Specifically ignore files

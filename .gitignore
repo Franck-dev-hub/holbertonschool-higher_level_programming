@@ -11,6 +11,7 @@
 !/python-inheritance/tests/*
 !/python-server_side_rendering/templates/*.html
 !*.sql
+!/python-everything_is_object/*
 
 # Specifically ignore files
 *main*.py

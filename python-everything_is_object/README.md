@@ -6,9 +6,29 @@ Python is a beautifully simple language on the surface, but beneath that simplic
 - data structures
 - function calls
 - memory behavior
+
 One of the first profound realizations you encounter when really learning Python is this: **everything in Python is an object**.
+
 Understanding what objects are, how they behave, and how Python manages them is essential for writing efficient, bug-free code.
+
 This article summarizes everything I learned during the project *“Python - Everything is object”*, illustrated with examples that reveal the sometimes surprising behavior of Python variables.
+
+---
+
+## Table of content
+- [Introduction](#introduction)
+- [Table of content](#table-of-content)
+- [id and type](#id-and-type)
+- [Mutable objects](#mutable-objects)
+- [Immutable objects](#immutable-objects)
+- [Why does this matter](#why-does-this-matter)
+  - [How Python passes arguments to functions](#how-python-passes-arguments-to-functions)
+  - [Immutable argument example](#immutable-argument-example)
+  - [Mutable argument example](#mutable-argument-example)
+  - [Reassignment inside a function does NOT affect the outside](#reassignment-inside-a-function-does-not-affect-the-outside)
+- [Surprising behaviors](#surprising-behaviors)
+  - [Small integers and string interning](#small-integers-and-string-interning)
+- [Conclusion](#conclusion)
 
 ---
 
@@ -21,7 +41,7 @@ Example:
 ```python
 a = 42
 print(type(a))   # <class 'int'>
-print(id(a))     # e.g., 140032485120784
+print(id(a))     # 140032485120784
 ```
 
 Two variables can have:
@@ -42,6 +62,7 @@ print(a is b)  # False: different objects
 
 ## Mutable Objects
 A **mutable object** can change its value in place without changing its identity.
+
 Lists are the most common example.
 ```python
 l1 = [1, 2, 3]
@@ -55,6 +76,7 @@ print(l1 is l2)  # True
 ```
 
 When you mutate a list, variables pointing to that list will all “see” the change.
+
 Another example:
 ```python
 a = [1, 2, 3]
@@ -69,6 +91,7 @@ print(id(a))         # same id!
 
 ## Immutable Objects
 Immutable objects cannot change once created.
+
 Any “modification” creates a **new object** instead of altering the existing one.
 
 Examples:
@@ -80,7 +103,7 @@ Examples:
 
 ```python
 a = 10
-print(id(a))        # e.g., 140032485120784
+print(id(a))        # 140032485120784
 
 a += 1
 print(id(a))        # NEW id!
@@ -97,8 +120,9 @@ print(id(s))        # different object
 
 ---
 
-## Why does this matter ?
+## Why does this matter
 Because Python treats mutable and immutable types very differently and confusing bugs often come from misunderstanding this behavior.
+
 Example: list concatenation vs append:
 ```python
 l1 = [1, 2, 3]
@@ -124,6 +148,7 @@ Here, `l1 + [4]` creates a **new** list — so `l1` no longer points to the same
 
 ## How Python passes arguments to functions
 Python uses **call-by-object** (also called call-by-sharing).
+
 A function receives a reference to an object, never the actual variable name.
 
 ### Immutable argument example
@@ -163,11 +188,11 @@ print(l1)  # unchanged
 
 ---
 
-## Advanced tasks – surprising behaviors
+## Surprising behaviors
 ### Small integers and string interning
 
 CPython optimizes memory by **reusing certain immutable** objects, such as:
-- small integers (from –5 to 256)
+- small integers (from ***–5*** to ***256***)
 - some strings (interned strings)
 
 Example:
@@ -201,10 +226,11 @@ c = "SCHL"
 
 ## Conclusion
 Understanding Python’s object model is essential for mastering the language.
+
 Knowing the difference between ***identity***, ***value***, and ***type***, and understanding how ***mutable*** vs ***immutable*** objects behave, helps avoid bugs that confuse even experienced developers.
 
 Most importantly:
-- Variables do NOT contain objects—they reference them.
+- Variables do NOT contain objects, they reference them.
 - Mutating a mutable object affects all references to it.
 - Reassigning a variable does NOT mutate the object.
 - Python functions work with references, but not the variable names.
